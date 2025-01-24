@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunchyroll</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Crunchyroll.svg/1024px-Crunchyroll.svg.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .venta {
+            background-color: white;
+            border: 2px solid #ed7318;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px; /* Ajuste del tamaño de la venta */
+            text-align: center;
+            position: relative;
+        }
+        .venta p {
+            margin: 15px 0;
+            color: black; /* Texto en color negro */
+            font-size: 16px;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: black; /* Texto en color negro */
+            margin-bottom: 20px;
+        }
+        .header-image {
+            width: 50%; /* Ajuste del tamaño de la imagen */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 40%; /* Ajuste del tamaño del video */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .boton {
+            background-color: #ed7318;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .boton:hover {
+            background-color: #d66616;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="openModal()">
+    <div class="overlay" id="overlay">
+        <div class="venta">
+            <button class="close-button" onclick="window.location.href='https://www.vendeygana.net/user/'">X</button>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Crunchyroll.svg/1024px-Crunchyroll.svg.png" alt="Crunchyroll" class="header-image">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/tsfrc9s3p7o" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="header-title">🎉 Descubre Crunchyroll: Tu portal al mejor anime y manga.</div>
+            <p>📲 Compra tu cuenta en Vende y Gana y disfruta de miles de episodios sin anuncios, nuevos episodios el mismo día de su estreno en Japón, y acceso exclusivo a mangas. ¡Únete a la comunidad global de fanáticos!</p>
+            <div class="botones">
+                <button class="boton" onclick="window.location.href='https://departamentodecuentas.company.site/products/otras-cuentas'">🛒 Comprar</button>
+                <button class="boton" onclick="window.location.href='https://www.vendeygana.net/user/'">🔙 Volver a Vende y Gana</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
