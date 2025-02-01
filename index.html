@@ -73,16 +73,17 @@
             margin-top: 20px;
         }
         .boton {
-            background-color: #ed7318;
+            background-color: #808080; /* Color neutro del botón de compras */
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-transform: uppercase;
+            animation: pulse 2s infinite; /* Añadir animación de titileo */
         }
         .boton:hover {
-            background-color: #d66616;
+            background-color: #696969;
         }
         .close-button {
             position: absolute;
@@ -99,6 +100,17 @@
             line-height: 25px;
             font-weight: bold;
         }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px #ed7318;
+            }
+            50% {
+                box-shadow: 0 0 20px #ed7318;
+            }
+            100% {
+                box-shadow: 0 0 5px #ed7318;
+            }
+        }
     </style>
 </head>
 <body onload="openModal()">
@@ -112,8 +124,7 @@
             <div class="header-title">🎉 Descubre Crunchyroll: Tu portal al mejor anime y manga.</div>
             <p>📲 Compra tu cuenta en Vende y Gana y disfruta de miles de episodios sin anuncios, nuevos episodios el mismo día de su estreno en Japón, y acceso exclusivo a mangas. ¡Únete a la comunidad global de fanáticos!</p>
             <div class="botones">
-                <button class="boton" onclick="window.location.href='https://departamentodecuentas.company.site/products/otras-cuentas'">🛒 Comprar</button>
-                <button class="boton" onclick="window.location.href='https://www.vendeygana.net/user/'">🔙 Volver a Vende y Gana</button>
+                <button class="boton" onclick="window.location.href='https://vendeygana2.github.io/comprarcrunchyroll/'">🛒 Comprar</button>
             </div>
         </div>
     </div>
