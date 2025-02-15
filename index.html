@@ -3,136 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crunchyroll</title>
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Crunchyroll.svg/1024px-Crunchyroll.svg.png" type="image/png">
+    <title>Formulario</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .venta {
-            background-color: white;
-            border: 2px solid #ed7318;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 600px; /* Ajuste del tamaño de la venta */
-            text-align: center;
-            position: relative;
-        }
-        .venta p {
-            margin: 15px 0;
-            color: black; /* Texto en color negro */
-            font-size: 16px;
-        }
-        .header-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: black; /* Texto en color negro */
-            margin-bottom: 20px;
-        }
-        .header-image {
-            width: 50%; /* Ajuste del tamaño de la imagen */
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 40%; /* Ajuste del tamaño del video */
-            height: 0;
             overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            margin-bottom: 20px;
         }
-        .video-container iframe {
+        .iframe-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
         }
-        .botones {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .boton {
-            background-color: #808080; /* Color neutro del botón de compras */
-            color: white;
-            padding: 10px 20px;
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-transform: uppercase;
-            animation: pulse 2s infinite; /* Añadir animación de titileo */
         }
-        .boton:hover {
-            background-color: #696969;
-        }
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con opacidad */
             text-align: center;
-            line-height: 25px;
-            font-weight: bold;
         }
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 5px #ed7318;
-            }
+        .modal-content {
+            background-color: #333;
+            margin: auto;
+            padding: 30px;
+            border: 5px solid #a9ff00; /* Marco verde */
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 10px;
+            color: white; /* Color del texto */
+            font-size: 18px; /* Aumentar el tamaño de la letra */
+            position: relative;
+        }
+        .modal-content .logo {
+            width: 100px; /* Ajustar el tamaño del logo */
+            height: auto;
+            margin: 10px;
+            animation: blink 2s infinite; /* Animación de titileo */
+        }
+        .modal-content .btn {
+            background-color: #a9ff00; /* Color del marco verde */
+            color: black; /* Letras negras */
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        @keyframes blink {
             50% {
-                box-shadow: 0 0 20px #ed7318;
-            }
-            100% {
-                box-shadow: 0 0 5px #ed7318;
+                opacity: 0.5;
             }
         }
     </style>
 </head>
-<body onload="openModal()">
-    <div class="overlay" id="overlay">
-        <div class="venta">
-            <button class="close-button" onclick="window.location.href='https://www.vendeygana.net/user/'">X</button>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Crunchyroll.svg/1024px-Crunchyroll.svg.png" alt="Crunchyroll" class="header-image">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/tsfrc9s3p7o" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="header-title">🎉 Descubre Crunchyroll: Tu portal al mejor anime y manga.</div>
-            <p>📲 Compra tu cuenta en Vende y Gana y disfruta de miles de episodios sin anuncios, nuevos episodios el mismo día de su estreno en Japón, y acceso exclusivo a mangas. ¡Únete a la comunidad global de fanáticos!</p>
-            <div class="botones">
-                <button class="boton" onclick="window.location.href='https://vendeygana2.github.io/comprarcrunchyroll/'">🛒 Comprar</button>
-            </div>
+<body>
+    <!-- Contenedor para el iframe para ocupar toda la pantalla -->
+    <div class="iframe-container">
+        <iframe src="https://fluidforms.co/embed/form?id=679e3ac1bd8870347e0fe067" id="formIframe"></iframe>
+    </div>
+
+    <!-- Botón "X" para abrir el popup -->
+    <button class="close-btn" id="openModalBtn" onclick="mostrarModal()" style="position: absolute; top: 10px; right: 10px; background-color: #ff5f5f; border: none; color: #fff; padding: 10px 15px; cursor: pointer; border-radius: 5px; z-index: 1000;">X</button>
+
+    <!-- Ventana emergente -->
+    <div id="miModal" class="modal">
+        <div class="modal-content">
+            <img class="logo" src="https://dhgf5mcbrms62.cloudfront.net/110979006/header-fcHJMd/IVsTzWZ-200x200.webp" alt="Logo Panaxtreaming">
+            <img class="logo" src="https://flujotvla.com/wp-content/uploads/2025/01/logo_flujotv_blanco-300x181-1-e1735926597394.png" alt="Logo FlujoTV">
+            <p>Si quieres disfrutar sin complicaciones de problemas como CONTRASEÑA INCORRECTA Y LA DIFICULTAD DE INICIAR SESIÓN DE NETFLIX y otras aplicaciones, adquiere Panaxtreaming o Flujo TV.</p>
+            <p>Panaxtreaming es orgullosamente venezolana hecha por venezolanos y, como Flujo TV, te ofrecen:</p>
+            <p>TV EN VIVO con más de 800 canales: Deportes (TODOS LOS ESPN, FOXSPORT y DIRECTV SPORTS), Noticias, Infantiles, música y un catálogo de más de 9,000 películas y series estrenos de las principales plataformas como Netflix, Amazon Prime, Disney Plus, Max, Crunchyroll, Apple TV.</p>
+            <button class="btn" onclick="window.location.href='https://vendeygana2.github.io/comprapanaxtreaming/'">Comprar Panaxtreaming</button>
+            <button class="btn" onclick="window.location.href='https://vendeygana2.github.io/compraflujotv/'">Comprar Flujo TV</button>
+            <button class="btn" onclick="window.location.href='https://www.vendeygana.net/user/'">Cerrar</button>
         </div>
     </div>
 
     <script>
-        function openModal() {
-            document.getElementById('overlay').style.display = 'flex';
+        function mostrarModal() {
+            var modal = document.getElementById('miModal');
+            modal.style.display = "block";
+            document.getElementById('openModalBtn').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('miModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>
 </html>
+
