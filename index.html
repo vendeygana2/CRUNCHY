@@ -25,30 +25,22 @@
             border: none;
         }
 
-        .close-btn {
+        .close-x {
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: #ff3b30;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 20px;
+            color: #333;
+            font-size: 30px;
             font-weight: bold;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .close-btn:hover {
-            background-color: #ff1a0d;
-            transform: scale(1.1);
+        .close-x:hover {
+            color: #ff3b30;
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -56,7 +48,7 @@
     <!-- Nuevo formulario embebido -->
     <iframe src="https://online.forms.app/respuestasdereportesdefa/crunchyroll" title="Formulario de Crunchyroll"></iframe>
     
-    <!-- Botón de cierre -->
-    <button class="close-btn" onclick="window.location.href='https://www.vendeygana.net/user/'">X</button>
+    <!-- Solo la X sin fondo -->
+    <a href="https://www.vendeygana.net/user/" class="close-x">×</a>
 </body>
 </html>
