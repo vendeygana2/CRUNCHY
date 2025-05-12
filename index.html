@@ -122,20 +122,19 @@
         .modal-content {
             position: relative;
             width: 90%;
-            height: 85%;
+            height: 90%; /* Adjusted height to fill the modal */
             margin: 2% auto;
             background: white;
             border-radius: 10px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center the button horizontally */
         }
 
         .modal-iframe-container {
             flex-grow: 1;
             overflow: auto;
-            width: 100%; /* Make iframe container take full width */
+            width: 100%;
         }
 
         .close-btn {
@@ -162,44 +161,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-        }
-
-        .regresar-btn {
-            background-color: #f0f0f0;
-            color: #333;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px; /* Add some space above the button */
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.3s ease;
-        }
-
-        .regresar-btn:hover {
-            background-color: #ddd;
-        }
-
-        .regresar-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: scale(5, 5);
-            border-radius: 50%;
-        }
-
-        .regresar-btn:active::before {
-            transform: scale(0, 0);
-            opacity: 0.7;
-            transition: transform 0s ease-out, opacity 0.2s ease-out;
         }
 
         @media (max-width: 600px) {
@@ -271,7 +232,6 @@
             <div class="modal-iframe-container">
                 <iframe id="modalFrame" src="" frameborder="0"></iframe>
             </div>
-            <button class="regresar-btn" onclick="cerrarModal()">Regresar</button>
         </div>
     </div>
 
